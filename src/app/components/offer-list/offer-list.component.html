@@ -1,0 +1,42 @@
+<div class="main-content">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+
+            <h1>Your Offers</h1>
+
+                <div *ngIf="offers.length > 0">
+                    <table class="table">
+                    
+                      <thead class="table-dark">
+                          <tr>
+                              <th>Name</th>
+                              <th>Amount</th>
+                              <th>Interest</th>
+                              <th>Months</th>
+                              <th>Interest Amount </th>
+                              <th>Loan Amount</th>
+                          </tr>
+                      </thead>
+                  
+                      <tbody>
+                          <tr *ngFor="let tempProduct of offers">
+                              <td class="align-middle">{{ tempProduct.offerName}}</td>
+                              <td class="align-middle">{{ tempProduct.amount | currency:'EUR'}}</td>
+                              <td class="align-middle">{{ tempProduct.interest}}%</td>
+                              <td class="align-middle">{{ tempProduct.months | currency:'EUR'}}</td>
+                              <td class="align-middle">{{ tempProduct.interestAmount | currency:'EUR'}}</td>
+                              <td class="align-middle">{{ tempProduct.loanAmount | currency:'EUR'}}</td>
+                          </tr>
+                      
+                      </tbody>
+                    </table>
+                </div>
+   
+        <div *ngIf="offers.length ==0" class="alert alert-warning col-md-12" role="alert">
+            Yout list is empty.
+        </div>
+    </div>
+</div>
+</div>
+
+    

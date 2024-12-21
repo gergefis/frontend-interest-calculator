@@ -1,0 +1,101 @@
+<div class="main-content page-s">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+
+  <!-- Angular Reactive Form -->
+  <form [formGroup]="calculatorForm" (ngSubmit)="onSubmit()" novalidate>
+    <div  class="form-area">
+        <h3>Calculate Your Loan</h3>
+    
+        <div class="row">
+            <div class="col-md-2">
+                <label for="amount">Amount(*)</label>  </div>
+                <div class="col-md-9">
+                    <div class="input-space">
+                    <input type="text" 
+                       class="form-control mb-4 w-25" 
+                       id="amount" 
+                       formControlName="amount" 
+                       placeholder="Enter Amount">
+                    <small *ngIf="calculatorForm.get('amount')?.invalid && calculatorForm.get('amount')?.touched" 
+                       class="alert alert-danger">
+                    {{ getErrorMessage('amount') }}
+                    </small>
+            </div>
+            </div>
+        </div>
+  
+
+        <div class="row">
+            <div class="col-md-2">
+                <label for="interest">Interest(*)</label>
+            </div>
+                <div class="col-md-9">
+                    <div class="input-space">
+                    <input type="text" 
+                           class="form-control mb-4 w-25" 
+                           id="interest" 
+                           formControlName="interest" 
+                           placeholder="Enter Interest Rate" />
+                    <small *ngIf="calculatorForm.get('interest')?.invalid && calculatorForm.get('interest')?.touched" 
+                           class="alert alert-danger">
+                        {{ getErrorMessage('interest') }}
+                    </small>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+        <div class="col-md-2">
+            <label for="months" class="form-label">Months(*)</label>
+        </div> 
+            <div class="col-md-9">
+                <div class="input-space"> 
+                        <input type="number" 
+                               class="form-control mb-4 w-25" 
+                               id="months" 
+                               formControlName="months" 
+                               placeholder="Enter Number of Months" />
+                        <small *ngIf="calculatorForm.get('months')?.invalid && calculatorForm.get('months')?.touched" 
+                               class="alert alert-danger">
+                            {{ getErrorMessage('months') }}
+                        </small>
+                </div>
+            </div>
+        </div>
+
+ 
+    <button  type="submit" [disabled]="calculatorForm.invalid" class="btn btn-primary col-3 mb-4">Calculate</button>
+
+</div>
+    <!-- END of calculator form  -->
+
+    <!-- BEGIN Result section -->
+    <div *ngIf="calculationResult?.totalInterest != null || calculationResult?.totalAmount != null;" class="mt-4"> <!-- -->
+        <h3 class="mb-3">Result</h3>
+        
+        <table class="table">
+
+          <thead class="table-dark">
+              <tr>
+                  <th>Total Interest Amount</th>
+                  <th>Total Credit with the Interest</th>
+              </tr>
+          </thead>
+      
+          <tbody>
+              <tr>
+                  <td class="align-middle">{{ calculationResult?.totalInterest | currency:'EUR' }}</td>
+                  <td class="align-middle">{{ calculationResult?.totalAmount | currency:'EUR' }}</td>
+              </tr>
+          </tbody>
+        </table>
+    </div>
+
+  <div class="mt-3">
+    <button type="submit" class="btn btn-primary col-3 mb-4" [disabled]="calculatorForm.invalid">Save</button>
+  </div>
+            </form>
+        </div>
+    </div>
+</div>
