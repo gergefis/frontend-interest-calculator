@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { Calculator } from '../../common/calculator';
 
 @Component({
   selector: 'app-calculator',
@@ -56,5 +57,13 @@ export class CalculatorComponent implements OnInit {
         this.calculationResult = response;
       });
     }
+  }
+
+  saveCalculationResult(calculationResult: Calculator): void {
+    this.http.post<Calculator>(this.apiUrl+'/save', calculationResult).subscribe( response=> {
+      alert('Calculation result saved:' + response);
+    }, error => {
+      alert('Error saving calculation result:' + error);
+    });
   }
 }
