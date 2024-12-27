@@ -9,19 +9,19 @@ import { map } from 'rxjs/operators';
 })
 export class CalculatorService {
 
-  private apiUrl = 'http://localhost:8080/offer-list'; 
+  private apiUrl = 'http://localhost:8080/api/offer-list'; 
 
   constructor(private httpClient: HttpClient) {}
 
   getOfferList(): Observable<Calculator[]> {
     return this.httpClient.get<GetResponse>(this.apiUrl).pipe(
-      map(response => response._embedded.calculator)
+      map(response => response.calculator) //._embedded
     );
   }
 }
 
 interface GetResponse {
-  _embedded: {
+  // _embedded: {
     calculator: Calculator[];
-  }
+  // }
 }
