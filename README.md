@@ -53,7 +53,7 @@ This repository combines clean design, reusable components, and robust functiona
 
 
 1. Add  your details
-![Alt text](../frontend-interest-calculator/src/assets/details/1-add-info.png)
+![Alt text](src/assets/details/1-add-info.png)
 
 2. Calculate
 ![Alt text](../frontend-interest-calculator/src/assets/details/2-result.png)
