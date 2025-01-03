@@ -58,5 +58,5 @@ This repository combines clean design, reusable components, and robust functiona
 2. ### Calculate
 ![Alt text](src/assets/details/2-result.png)
 
-3. ### Find your personal saved offers (only for registered users)
+3. ### Find your personal saved offers (for registered users only)
 ![Alt text](src/assets/details/offer.png)
