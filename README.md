@@ -52,11 +52,11 @@ The application is likely aimed at:
 This repository combines clean design, reusable components, and robust functionality to deliver a fully-featured interest calculator frontend.
 
 
-1. Add  your details
+1. ### Add  your details
 ![Alt text](src/assets/details/1-add-info.png)
 
-2. Calculate
+2. ### Calculate
 ![Alt text](src/assets/details/2-result.png)
 
-3. Find your personal saved offers (only for registered users)
+3. ### Find your personal saved offers (only for registered users)
 ![Alt text](src/assets/details/offer.png)
