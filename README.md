@@ -56,7 +56,7 @@ This repository combines clean design, reusable components, and robust functiona
 ![Alt text](src/assets/details/1-add-info.png)
 
 2. Calculate
-![Alt text](../frontend-interest-calculator/src/assets/details/2-result.png)
+![Alt text](src/assets/details/2-result.png)
 
 3. Find your personal saved offers (only for registered users)
-![Alt text](../frontend-interest-calculator/src/assets/details/offer.png)
+![Alt text](src/assets/details/offer.png)
